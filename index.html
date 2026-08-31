@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanly Works | Designing work that works for humans and systems</title>
+    <style>
+        :root {
+            --primary-purple: #4A154B;
+            --accent-pink: #E01E5A;
+            --soft-pink: #F8F0F6;
+            --dark-text: #2C2C2C;
+            --light-bg: #FFFFFF;
+            --border-color: #E2D7E2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        body {
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-pink);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-pink);
+        }
+
+        .hero {
+            background-color: var(--soft-pink);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 3rem solid var(--primary-purple);
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-pink);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #B81446;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-purple);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-pink);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .credentials {
+            background: var(--soft-pink);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-pink);
+        }
+
+        .credentials h3 {
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+
+        .credentials ul {
+            list-style-type: disc;
+            padding-left: 1.2rem;
+        }
+
+        .credentials li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .quote-box {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            font-size: 1.3rem;
+            font-style: italic;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .quote-box p {
+            color: white;
+        }
+
+        .process-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-purple);
+        }
+
+        .process-step h4 {
+            color: var(--accent-pink);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--soft-pink);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .service-card h3 {
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--primary-purple);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Humanly <span>Works</span></a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#process">Process</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Designing work that works for humans and systems</h1>
+            <p>Disability, chronic pain, and presenteeism focus · Research that informs. Consulting that moves. Workplaces that last.</p>
+            <a href="#contact" class="cta-btn">Book a conversation</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Dr. Maria Zapata</h2>
+        <p><strong>Founder & Principal Consultant</strong></p>
+        <div class="about-grid">
+            <div>
+                <p>I started Humanly Works after years of researching what organizations often overlook: the conditions that allow people to do their best work. This project grew out of doctoral research on disability, gender, and employment — fieldwork carried out in Scotland and Peru studying how skilled professionals navigate work alongside chronic illness, caregiving, and organizational expectations. Now based in Canada, I continue working on it!</p>
+                <br>
+                <p>One conviction came out of all of it: when people are seen as whole human beings — not managed as variables — organizations win too. Performance goes up. Attrition goes down. And the business case takes care of itself.</p>
+            </div>
+            <div class="credentials">
+                <h3>Credentials</h3>
+                <ul>
+                    <li><strong>PhD, Human Resources</strong> · Heriot-Watt University · Edinburgh · James-Watt Scholarship recipient</li>
+                    <li><strong>MBA</strong> · Edinburgh Business School · 30% Club UK Chapter Scholarship recipient</li>
+                    <li><strong>Master in Pedagogic Innovation</strong> · EUCIM · Madrid</li>
+                    <li><strong>BA in Political Science & Government</strong> · PUCP · Lima</li>
+                    <li>Associate Fellow, Advance HE</li>
+                    <li>Based in the Okanagan, BC, Canada · Working internationally</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="quote-box">
+        <p>«Organizations already measure outcomes. I help them understand the human conditions that produce them»</p>
+        <p style="font-size: 1rem; margin-top: 0.5rem; opacity: 0.9;">— Dr. Maria Zapata</p>
+    </div>
+
+    <section id="process" class="section">
+        <h2 class="section-title">How I Work</h2>
+        <div class="process-bar">
+            <div class="process-step">
+                <h4>1. Discover</h4>
+                <p>A conversation to understand your challenge, your context, and what you’ve already tried.</p>
+            </div>
+            <div class="process-step">
+                <h4>2. Understand</h4>
+                <p>Evidence and analysis — what your data, your people, and your practices are actually telling you.</p>
+            </div>
+            <div class="process-step">
+                <h4>3. Design</h4>
+                <p>Recommendations grounded in research and shaped to work in your real organizational context.</p>
+            </div>
+            <div class="process-step">
+                <h4>4. Implement</h4>
+                <p>Practical action — support that doesn’t disappear after the final slide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">What I Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Practice</h3>
+                <p>Consulting, diagnostics, and advisory support for workforce sustainability.</p>
+            </div>
+            <div class="service-card">
+                <h3>Research</h3>
+                <p>Applied research that turns lived experience into evidence leaders and organizations can use.</p>
+            </div>
+            <div class="service-card">
+                <h3>Strategy</h3>
+                <p>Evidence-informed recommendations connecting people outcomes to organizational outcomes.</p>
+            </div>
+            <div class="service-card">
+                <h3>Speaking</h3>
+                <p>Keynotes, panels, and conversations for leaders exploring the future of work.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section" style="text-align: center;">
+        <h2 class="section-title">Get in Touch</h2>
+        <p style="margin-bottom: 1.5rem;">Ready to shape a workplace that lasts?</p>
+        <a href="mailto:contact@humanlyworks.com" class="cta-btn">Book a conversation</a>
+    </section>
+
+    <footer>
+        <p>&copy; Humanly Works. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
